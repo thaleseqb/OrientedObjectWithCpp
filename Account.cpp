@@ -1,12 +1,12 @@
 #include "Account.hpp"
 #include <iostream>
 
-Account::Account(std::string number, std::string name, std::string cpf) {
-    this->number = number;
-    this->name = name;
-    this->cpf = cpf;
-    this->balance = 0;
-}
+// the initialization list is more efficient in reserving memory resources
+Account::Account(std::string number, std::string name, std::string cpf):
+    number(number),
+    name(name),
+    cpf(cpf),
+    balance(0) {}
 
 void Account::withdrawMoney(float value) {
     if (value < 0) {
