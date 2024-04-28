@@ -1,12 +1,16 @@
 #pragma once
 #include <string>
 
-struct Account {
+class Account {
+
+private:
     std::string passWord;
     std::string cpf;
     std::string name;
-    float balance;
-    
-    void getMoney(float value);
+    float balance = 0;
+
+public: 
+    void withdrawMoney(float value);
     void insertMoney(float value);
+    float getBalance();
 };

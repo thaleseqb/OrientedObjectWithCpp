@@ -1,7 +1,7 @@
 #include "Account.hpp"
 #include <iostream>
 
-void Account::getMoney(float value) {
+void Account::withdrawMoney(float value) {
     if (value < 0) {
         std::cout << "It's not possible to take negative values of money" << std::endl;
         return;
@@ -22,4 +22,8 @@ void Account::insertMoney(float value) {
     }
 
     balance += value;
+}
+
+float Account::getBalance() {
+    return balance;
 }
