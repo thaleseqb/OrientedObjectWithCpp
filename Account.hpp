@@ -1,25 +1,23 @@
 #pragma once
 #include <string>
+#include "User.hpp"
 
 class Account {
 
 private:
     static int accountNumber;
     std::string number;
-    std::string cpf;
-    std::string name;
+    User user;
     float balance;
-    void checksLengthName();
 
 public:
-    Account(std::string number, std::string name, std::string cpf);
+    Account(std::string number, User user);
     ~Account();
     void withdrawMoney(float value);
     void insertMoney(float value);
     float getBalance() const;
     std::string getNumber() const;
-    std::string getCpf() const;
-    std::string getName() const;
+    std::string getUser(User user) const;
     static int getAccountNumber();
 
 };

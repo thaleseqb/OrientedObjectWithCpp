@@ -1,15 +1,14 @@
 #include "Account.hpp"
+#include "User.hpp"
 #include <iostream>
 
 int Account::accountNumber = 0;
 
 // the initialization list is more efficient in reserving memory resources
-Account::Account(std::string number, std::string name, std::string cpf):
+Account::Account(std::string number, User user) :
     number(number),
-    name(name),
-    cpf(cpf),
+    user(user),
     balance(0) {
-        checksLengthName();
         accountNumber++;
     }
 
@@ -50,21 +49,13 @@ std::string Account::getNumber() const {
     return number;
 }
 
-std::string Account::getCpf() const {
-    return cpf;
-}
-
-std::string Account::getName() const {
-    return name;
+std::string Account::getUser(User user) const {
+    std::string message = "The account owner's name is: " + user.getName() + 
+    " and your CPF is: " + user.getCpf();
+    return message;
 }
 
 int Account::getAccountNumber() {
     return accountNumber;
 }
 
-void Account::checksLengthName() {
-    if (name.size() < 5) {
-        std::cout << "The name must have at least 5 letters" << std::endl;
-        exit(EXIT_FAILURE); 
-    }
-}
