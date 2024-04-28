@@ -9,8 +9,13 @@ Account::Account(std::string number, std::string name, std::string cpf):
     name(name),
     cpf(cpf),
     balance(0) {
+        checksLengthName();
         accountNumber++;
     }
+
+Account::~Account() {
+    accountNumber--;
+}
 
 void Account::withdrawMoney(float value) {
     if (value < 0) {
@@ -55,4 +60,11 @@ std::string Account::getName() const {
 
 int Account::getAccountNumber() {
     return accountNumber;
+}
+
+void Account::checksLengthName() {
+    if (name.size() < 5) {
+        std::cout << "The name must have at least 5 letters" << std::endl;
+        exit(EXIT_FAILURE); 
+    }
 }
