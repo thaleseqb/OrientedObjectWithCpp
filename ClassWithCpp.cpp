@@ -1,36 +1,6 @@
 #include <iostream>
 #include <string>
-
-struct Account {
-    std::string passWord;
-    std::string cpf;
-    std::string name;
-    float balance;
-    
-    void getMoney(float value) {
-        if (value < 0) {
-            std::cout << "It's not possible to take negative values of money" << std::endl;
-            return;
-        }
-
-        if (balance < value) {
-            std::cout << "Your balance is not suficient" << std::endl;
-            return;
-        }
-
-        balance -= value;
-    }
-
-    void insertMoney(float value) {
-        if (value < 0) {
-            std::cout << "It's not possible to insert negative values of money" << std::endl;
-            return;
-        }
-
-        balance += value; 
-    }
-};
-
+#include "Account.hpp"
 
 int main() {
     Account account1;
