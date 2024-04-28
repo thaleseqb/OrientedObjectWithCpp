@@ -3,11 +3,8 @@
 #include "Account.hpp"
 
 int main() {
-    Account account1;
-    Account account2;
-
-    account1.setName("Marcio");
-    account2.setName("Joana");
+    Account account1("1234356", "Marcio", "123454566-78");
+    Account account2("1234346", "Joana", "1234545243-78");
 
     account1.insertMoney(400);
     account2.withdrawMoney(200);

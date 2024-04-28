@@ -7,9 +7,10 @@ private:
     std::string number;
     std::string cpf;
     std::string name;
-    float balance = 0;
+    float balance;
 
-public: 
+public:
+    Account(std::string number, std::string name, std::string cpf);
     void withdrawMoney(float value);
     void insertMoney(float value);
     float getBalance() const;

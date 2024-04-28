@@ -1,6 +1,13 @@
 #include "Account.hpp"
 #include <iostream>
 
+Account::Account(std::string number, std::string name, std::string cpf) {
+    this->number = number;
+    this->name = name;
+    this->cpf = cpf;
+    this->balance = 0;
+}
+
 void Account::withdrawMoney(float value) {
     if (value < 0) {
         std::cout << "It's not possible to take negative values of money" << std::endl;
@@ -40,31 +47,4 @@ std::string Account::getCpf() const {
 
 std::string Account::getName() const {
     return name;
-}
-
-void Account::setName(std::string name) {
-    if (this->name.empty()) {
-        this->name = name;
-        return;
-    }
-
-    std::cout << "This acccount name is already defined" << std::endl;
-}
-
-void Account::setCpf(std::string cpf) {
-    if (this->cpf.empty()) {
-        this->cpf = cpf;
-        return;
-    }
-
-    std::cout << "This acccount cpf is already defined" << std::endl;
-}
-
-void Account::setNumber(std::string number) {
-    if (this->number.empty()) {
-        this->number = number;
-        return;
-    }
-
-    std::cout << "This acccount number is already defined" << std::endl;
 }
