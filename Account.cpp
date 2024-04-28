@@ -1,12 +1,16 @@
 #include "Account.hpp"
 #include <iostream>
 
+int Account::accountNumber = 0;
+
 // the initialization list is more efficient in reserving memory resources
 Account::Account(std::string number, std::string name, std::string cpf):
     number(number),
     name(name),
     cpf(cpf),
-    balance(0) {}
+    balance(0) {
+        accountNumber++;
+    }
 
 void Account::withdrawMoney(float value) {
     if (value < 0) {
@@ -15,7 +19,7 @@ void Account::withdrawMoney(float value) {
     }
 
     if (balance < value) {
-        std::cout << "Your balance is not suficient" << std::endl;
+        std::cout << "Your balance is not enough" << std::endl;
         return;
     }
 
@@ -47,4 +51,8 @@ std::string Account::getCpf() const {
 
 std::string Account::getName() const {
     return name;
+}
+
+int Account::getAccountNumber() {
+    return accountNumber;
 }

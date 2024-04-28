@@ -4,6 +4,7 @@
 class Account {
 
 private:
+    static int accountNumber;
     std::string number;
     std::string cpf;
     std::string name;
@@ -17,7 +18,6 @@ public:
     std::string getNumber() const;
     std::string getCpf() const;
     std::string getName() const;
-    void setName(std::string name);
-    void setNumber(std::string number);
-    void setCpf(std::string cpf);
+    static int getAccountNumber();
+
 };

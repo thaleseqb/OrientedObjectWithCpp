@@ -14,5 +14,6 @@ int main() {
     std::cout << account1.getName() << std::endl;
     std::cout << account2.getName() << std::endl;
     
+    std::cout << "account number: " << Account::getAccountNumber() << std::endl;
 
 }
